@@ -13,9 +13,10 @@
 
 - MainProcess.py，主处理程序，主要处理过程：
 
-1. 是定时调用OrderHandler查询订单;
-2. 循环遍历订单，根据订单中的商品编码（ProductCode），调用StockHandler获取对应的库存信息做出库处理。
-3. 如果出库成功，那么调用OrderHandler进行发货，再调用SendSMSHandler进行通知短信的发送。
+1. 定时启动任务
+2. 调用OrderHandler查询订单;
+3. 循环遍历订单，根据订单中的商品编码（ProductCode），调用StockHandler获取对应的库存信息做出库处理。
+4. 如果出库成功，那么调用OrderHandler进行发货，再调用SendSMSHandler进行通知短信的发送。
 
 以上处理过程会有以下几个异常场景：
 
