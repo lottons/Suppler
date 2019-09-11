@@ -57,14 +57,14 @@ def execute_main_command():
 
 
 # 被周期性调度触发的函数
-def print_time(enter_time):
-    print("now is", time.strftime('%Y-%m-%d %H:%M:%S'), "enter_the_box_time is", enter_time)
+def print_time(startTime):
+    print("now is", time.strftime('%Y-%m-%d %H:%M:%S'), "enter_the_box_time is" + startTime)
 
 
 if __name__ == "__main__":
     print('start')
-
-    Timer( 5, print_time, (time.strftime( '%Y-%m-%d %H:%M:%S' ),) ).start()
-
-
+    schedule.every(5).seconds.do(print_time, time.strftime('%Y-%m-%d %H:%M:%S'))
     time.time()
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
