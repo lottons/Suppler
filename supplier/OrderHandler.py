@@ -7,8 +7,8 @@ import json
 
 class OrderHandler:
     def __init__(self):
-        self.myAppKey = 'ad313b236ba57163e25c4163b1e70c86'
-        self.myAppSecret = 'fc9e9f4ade0511d57c7d99c60f9fdd62'
+        self.myAppKey = 'aaa'
+        self.myAppSecret = 'bb'
         self.requestUrl = 'https://open.suning.com'
         self.domain = 'https://open.suning.com'
         self.supplierCode = '10203337'
